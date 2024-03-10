@@ -5,8 +5,6 @@ import com.google.gson.GsonBuilder;
 import net.fabricmc.api.ClientModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -14,9 +12,8 @@ import java.nio.file.Files;
 
 public class MoveHotbar implements ClientModInitializer {
     public static final String MOD_ID = "move-hotbar";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static File file = new File(FabricLoader.getInstance().getConfigDir().toFile(), "movehotbar.json");
+	public static File file = new File(FabricLoader.getInstance().getConfigDir().toFile(), "move-ui.json");
 	public static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	public static Config config = new Config();
 

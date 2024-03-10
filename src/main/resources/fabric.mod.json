@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "move-hotbar",
 	"version": "${version}",
-	"name": "Move Hotbar",
+	"name": "Move UI",
 	"description": "Allows you to move around your ui elements!",
 	"authors": [
 		"Craftmayham"
