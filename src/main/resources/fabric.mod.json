@@ -3,13 +3,13 @@
 	"id": "move-hotbar",
 	"version": "${version}",
 	"name": "Move Hotbar",
-	"description": "I move hotbar",
+	"description": "Allows you to move around your ui elements!",
 	"authors": [
-		"Crafmayham"
+		"Craftmayham"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/craftmayham/move-ui"
 	},
 	"license": "MIT",
 	"icon": "assets/move-hotbar/icon.png",
