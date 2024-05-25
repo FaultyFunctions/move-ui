@@ -4,6 +4,7 @@ import net.craftmayham.movehotbar.MoveHotbar;
 import net.minecraft.client.gui.hud.InGameHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(value = InGameHud.class, priority = -1)
@@ -88,4 +89,8 @@ public class InGameHudMixin {
     private int modifyStatusBarsSpacing(int value) {
         return value + MoveHotbar.getHungerSpacing();
     }
+    @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;III)I"), slice = @Slice(from = @At("HEAD"), to = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;III)I")), index = 2)
+    private int modifyActionBarX(int value) { return value + MoveHotbar.getActionBarX(); }
+    @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;III)I"), slice = @Slice(from = @At("HEAD"), to = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;III)I")), index = 3)
+    private int modifyActionBarY(int value) { return value + MoveHotbar.getActionBarY(); }
 }

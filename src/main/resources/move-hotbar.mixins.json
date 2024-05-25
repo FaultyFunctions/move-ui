@@ -3,7 +3,8 @@
 	"package": "net.craftmayham.movehotbar.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"client.gui.hud.InGameHudMixin"
+		"client.gui.hud.InGameHudMixin",
+		"client.gui.hud.BossBarHudMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

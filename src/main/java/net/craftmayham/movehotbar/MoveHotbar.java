@@ -33,6 +33,10 @@ public class MoveHotbar implements ClientModInitializer {
 		public int hungerx=0;
 		public int hungery=0;
 		public int hungerspacing=0;
+		public int actionbarx=0;
+		public int actionbary=0;
+		public int bossbarx=0;
+		public int bossbary=0;
 	}
 
 	public static void saveConfig() {
@@ -106,6 +110,10 @@ public class MoveHotbar implements ClientModInitializer {
 	public static int getHungerSpacing() {
 		return config.hungerspacing;
 	}
+	public static int getActionBarX() { return config.actionbarx; }
+	public static int getActionBarY() { return config.actionbary; }
+	public static int getBossBarX() { return config.bossbarx; }
+	public static int getBossBarY() { return config.bossbary; }
 
 	public static void putObjects() {
 		FabricLoader.getInstance().getObjectShare().put("movehotbar:x", config.hotbarx);
@@ -122,6 +130,10 @@ public class MoveHotbar implements ClientModInitializer {
 		FabricLoader.getInstance().getObjectShare().put("hunger:x", config.hungerx);
 		FabricLoader.getInstance().getObjectShare().put("hunger:y", config.hungery);
 		FabricLoader.getInstance().getObjectShare().put("hunger:spacing", config.hungerspacing);
+		FabricLoader.getInstance().getObjectShare().put("actionbar:x", config.actionbarx);
+		FabricLoader.getInstance().getObjectShare().put("actionbar:y", config.actionbary);
+		FabricLoader.getInstance().getObjectShare().put("bossbar:x", config.bossbarx);
+		FabricLoader.getInstance().getObjectShare().put("bossbar:y", config.bossbary);
 	}
 	@Override
 	public void onInitializeClient() {
